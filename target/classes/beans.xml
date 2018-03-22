@@ -8,8 +8,15 @@ http://www.springframework.org/schema/context http://www.springframework.org/sch
     <!-- Etiqueta para reconocer las anotaciones -->
     <context:component-scan base-package="pe.tuna.*"></context:component-scan>
 
+    <!-- cuando creamos un archivo properties para el acceso a base de datos -->
+    <context:property-placeholder location="classpath:valores.properties"></context:property-placeholder>
+
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
+        <!--
+         * Ejemplo con properties
+         <property name="driverClassName" value="${driver}"></property>
+        -->
         <property name="url" value="jdbc:mysql://localhost:3306/bd_mitocode"></property>
         <property name="username" value="root"></property>
         <property name="password" value=""></property>

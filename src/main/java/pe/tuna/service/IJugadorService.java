@@ -1,7 +1,7 @@
-package pe.tuna.dao;
+package pe.tuna.service;
 
 import pe.tuna.beans.Jugador;
 
-public interface IJugadorDAO {
+public interface IJugadorService {
     public void registrar(Jugador jugador) throws Exception;
 }
